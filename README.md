@@ -1,4 +1,7 @@
 How to use!
+
+You Need to Install AutoHotkey!
+
 Launch pedwiepies tuber simulator in BLUESTACKS APP PLAYER!
 (Dont enable fullscreen)
 Only Supported Resolution - 1920x1080
