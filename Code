@@ -1,0 +1,101 @@
+Here is all of the code!
+
+#Persistent
+
+MsgBox Author: Karmelikson
+MsgBox Start Script by CTRL + K
+MsgBox Stop Script by CTRL + Q
+
+; Ustaw pozycje kursora do pierwszego ruchu (X1, Y1)
+X1 := 980  ; Pozycja X1 kursora
+Y1 := 752  ; Pozycja Y1 kursora
+
+; Ustaw pozycje kursora do kolejnych ruchów (X2, Y2, ..., X9, Y9)
+X2 := 1190  ; Pozycja X2 kursora
+Y2 := 90  ; Pozycja Y2 kursora
+
+X3 := 960 ; Pozycja X3 kursora
+Y3 := 500  ; Pozycja Y3 kursora
+
+X4 := 960 ; Pozycja X4 kursora
+Y4 := 840  ; Pozycja Y4 kursora
+
+X5 := 960  ; Pozycja X5 kursora
+Y5 := 840  ; Pozycja Y5 kursora
+
+X6 := 940 ; Pozycja X6 kursora
+Y6 := 970  ; Pozycja Y6 kursora
+
+X7 := 930 ; Pozycja X7 kursora
+Y7 := 300  ; Pozycja Y7 kursora
+
+X8 := 940 ; Pozycja X8 kursora
+Y8 := 200  ; Pozycja Y8 kursora
+
+X9 := 870 ; Pozycja X9 kursora
+Y9 := 690  ; Pozycja Y9 kursora
+
+X10 := 954 ; Pozycja X9 kursora
+Y10 := 906  ; Pozycja Y9 kursora
+
+; Skrót klawiszowy: Ctrl + K, aby rozpocząć
+^k::
+Loop  ; Pętla, która będzie powtarzała całą sekwencję
+{
+    ; Przenieś kursor na pierwszą pozycję
+    MouseMove, %X1%, %Y1%
+
+    ; Kliknięcia na sekundę (CPS)
+    CPS := 15
+    Interval := 1000 / CPS  ; Obliczenie interwału między kliknięciami w milisekundach
+
+    ; Czas trwania klikania (w milisekundach)
+    Duration := 30000  ; 30 sekund
+
+    ; Rozpocznij klikanie przez określony czas
+    StartTime := A_TickCount
+    While (A_TickCount - StartTime < Duration)
+    {
+        Click
+        Sleep, %Interval%
+    }
+
+    ; Po zakończeniu klikania, przenieś kursor na kolejne pozycje i klikaj
+    Sleep, 9000
+    MouseMove, %X2%, %Y2%
+    Click
+    Sleep, 1200
+    MouseMove, %X3%, %Y3%
+    Click
+    Sleep, 500
+    Click
+    Sleep, 500  
+    Click
+    Sleep, 500  
+    Click
+    Sleep, 1450  	
+    MouseMove, %X4%, %Y4%
+    Click
+    Sleep, 3700   
+    MouseMove, %X5%, %Y5%
+    Click
+    Sleep, 1200   
+    MouseMove, %X6%, %Y6%
+    Click
+    Sleep, 1200 
+    MouseMove, %X7%, %Y7%
+    Click
+    Sleep, 1200 
+    MouseMove, %X8%, %Y8%
+    Click
+    Sleep, 1200
+    MouseMove, %X9%, %Y9%
+    Click
+    Sleep, 1200
+    MouseMove, %X10%, %Y10%
+    Click
+}
+return
+
+; Skrót klawiszowy: Ctrl + Q, aby zamknąć skrypt
+^q::ExitApp
